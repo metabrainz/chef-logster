@@ -13,3 +13,8 @@ package "logster"
 user "logster" do
     action :create
 end
+
+directory "/var/log/logster" do
+    action :create
+    user "logster"
+end

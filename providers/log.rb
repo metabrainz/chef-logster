@@ -19,13 +19,15 @@ action :add do
     end
 
     cron "logster #{new_resource.log_file.gsub(/\//, '_')}" do
-        command "#{python_path} /usr/sbin/logster #{o} #{new_resource.parser} #{new_resource.log_file}"
+        command "#{python_path} /usr/bin/logster #{o} #{new_resource.parser} #{new_resource.log_file}"
         action :create
+        user "logster"
     end
 end
 
 action :remove do
     cron "logster #{new_resource.gsub(/\//, '_')}" do
+        user "logster"
         action :delete
     end
 end
