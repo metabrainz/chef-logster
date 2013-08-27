@@ -10,6 +10,7 @@ attribute :prefix, :kind_of => String
 attribute :parser_options, :kind_of => String
 attribute :gmetric_options, :kind_of => String
 attribute :graphite_host, :kind_of => String
-attribute :state_dir, :kind_of => String
+attribute :state_dir, :kind_of => String, :default => "/var/lib/logster"
 attribute :output, :kind_of => String
 attribute :parser, :kind_of => String
+attribute :python_path, :kind_of => Array, :default => []
