@@ -22,6 +22,7 @@ action :add do
         command "#{python_path} /usr/bin/logster #{o} #{new_resource.parser} #{new_resource.log_file}"
         action :create
         user "logster"
+        mailto node['logster']['mailto']
     end
 end
 
