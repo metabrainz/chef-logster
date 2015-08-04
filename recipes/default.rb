@@ -1,11 +1,11 @@
 include_recipe "apt"
 
-apt_repository "kiall" do
-  uri "http://ppa.launchpad.net/kiall/logster/ubuntu"
+apt_repository "musicbrainz" do
+  uri "http://ppa.launchpad.net/metabrainz/musicbrainz-server/ubuntu"
   distribution node['lsb']['codename']
   components ["main"]
   keyserver "keyserver.ubuntu.com"
-  key "6FD8098A15B1106C229A7A029B9566D4DFA62498"
+  key "D58E52C99814760488A38D87E3446F96A3FB3557"
 end
 
 package "logtail"
